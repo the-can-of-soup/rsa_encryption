@@ -6,19 +6,18 @@ import sympy
 
 def random_prime(bits: int = 1024) -> int:
     """
-    Generates a random prime number of the specified bit length.
+    Generates a random prime number of the specified bit length. Cannot choose 2.
     """
+    assert bits >= 2
+
     system_random: secrets.SystemRandom = secrets.SystemRandom()
 
     while True:
         # Get random number
         p: int = system_random.getrandbits(bits)
 
-        # Ensure proper bit length by forcing binary to begin with 1
-        p |= 1 << bits - 1
-
-        # Ensure odd number by forcing binary to end with 1
-        p |= 1
+        # Ensure proper bit length and ensure odd number by performing bitwise OR with "10000...00001"
+        p |= (1 << bits - 1) | 1
 
         # Check prime
         if sympy.isprime(p):
@@ -67,13 +66,15 @@ class PrivateKey:
         Generates a random private key of the specified bit length.
         """
         assert bits % 2 == 0
+        assert bits >= 6 # 3 bits for each factor, which barely allows for 2 different primes (5 or 101 and 7 or 111)
         bits //= 2
 
-        return PrivateKey(
-            random_prime(bits),
-            random_prime(bits),
-            public_exponent=public_exponent
-        )
+        p: int = random_prime(bits)
+        q: int = random_prime(bits)
+        while p == q:
+            q = random_prime(bits)
+
+        return PrivateKey(p, q, public_exponent=public_exponent)
 
 def factorize(public_key: PublicKey, progress_update: Callable[[int, int], None] | None = None, update_cooldown: int = 1_000_000) -> PrivateKey:
     """
