@@ -104,6 +104,8 @@ class PrivateKey:
                 if update_cooldown_expired:
                     current_update_cooldown = update_cooldown
 
+            progress_update(max_p, max_p)
+
         else: # Use brute force code that does not include update checks if that feature isn't being used
             for p in range(2, max_p + 1):
                 # Check if p is a factor
