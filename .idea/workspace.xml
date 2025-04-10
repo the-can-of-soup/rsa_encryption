@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add basic encryption and decryption, add random key generator and factorizer" />
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Give progress update when factorization finishes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsa_encryption.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsa_encryption.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +73,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744307961006</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Give progress update when factorization finishes">
+      <option name="closed" value="true" />
+      <created>1744308142567</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744308142567</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,6 +98,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add basic encryption and decryption, add random key generator and factorizer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add basic encryption and decryption, add random key generator and factorizer" />
+    <MESSAGE value="Give progress update when factorization finishes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Give progress update when factorization finishes" />
   </component>
 </project>
