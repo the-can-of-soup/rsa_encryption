@@ -289,12 +289,13 @@ if __name__ == '__main__':
     key: PrivateKey = PrivateKey.random(128)
     print(f'Private key: {key}')
     key: PublicKey = key.public_key
-    print()
+    print(f'Public key: {key}')
     text: bytes = b'Hello, World! This is a test of RSA block-based binary encryption.'
-    print(f'Original: {text}')
+    print(f'Original text: {text}')
     print()
     text: CipherText = encrypt_bytes(text, key)
     print(f'Encrypted: {text}')
+    print('Deleted original text and private key.')
     print()
     print('Hacking encryption...')
     key: PrivateKey = factorize(key)
