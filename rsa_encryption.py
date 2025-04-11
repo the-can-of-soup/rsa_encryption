@@ -288,6 +288,7 @@ def decrypt_bytes(ciphertext: CipherText, private_key: PrivateKey) -> bytes:
 if __name__ == '__main__':
     key: PrivateKey = PrivateKey.random(128)
     print(f'Private key: {key}')
+    key: PublicKey = key.public_key
     print()
     text: bytes = b'Hello, World! This is a test of RSA block-based binary encryption.'
     print(f'Original: {text}')
@@ -295,5 +296,10 @@ if __name__ == '__main__':
     text: CipherText = encrypt_bytes(text, key)
     print(f'Encrypted: {text}')
     print()
+    print('Hacking encryption...')
+    key: PrivateKey = factorize(key)
+    print(f'Private key found: {key}')
+    print()
     text: bytes = decrypt_bytes(text, key)
     print(f'Decrypted: {text}')
+    input()

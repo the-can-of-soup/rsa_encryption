@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add check for wrong key types">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsa_encryption.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsa_encryption.py" afterDir="false" />
-    </list>
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add encryption/decryption into bytestrings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +34,7 @@
     "Python.rsa_encryption.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.spelling"
   }
@@ -121,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744389234094</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add encryption/decryption into bytestrings">
+      <option name="closed" value="true" />
+      <created>1744415163488</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744415163488</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +151,7 @@
     <MESSAGE value="Remove unused stuff" />
     <MESSAGE value="Add check" />
     <MESSAGE value="Add check for wrong key types" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add check for wrong key types" />
+    <MESSAGE value="Add encryption/decryption into bytestrings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add encryption/decryption into bytestrings" />
   </component>
 </project>
