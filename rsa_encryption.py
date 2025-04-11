@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Callable, Generator
+from typing import Generator
 import secrets
 import sympy
 
@@ -76,17 +76,13 @@ class PrivateKey:
 
         return PrivateKey(p, q, public_exponent=public_exponent)
 
-def factorize(public_key: PublicKey, progress_update: Callable[[int, int], None] | None = None, update_cooldown: int = 1_000_000) -> PrivateKey:
+def factorize(public_key: PublicKey) -> PrivateKey:
     """
     Performs a factorization to retrieve the private key from a given public key.
     This isn't feasible for modern 2048-bit keys and should only be used on very weak keys.
 
     :param public_key: The public key to brute force.
     :type public_key: PublicKey
-    :param progress_update: An optional function to be called periodically while cracking. Should be used for progress bars or displays. The function is passed the current number being checked and the maximum number that will be checked.
-    :type progress_update: Callable[[int, int], None]
-    :param update_cooldown: The number loops to process between each call to ``progress_update``.
-    :type update_cooldown: int
     """
     n: int = public_key.modulus
     factors: Generator[int, None, None] = sympy.divisors(n, True)
@@ -116,4 +112,4 @@ def decrypt_int(ciphertext: int, private_key: PrivateKey):
     return pow(ciphertext, private_key.exponent, private_key.public_key.modulus)
 
 if __name__ == '__main__':
-    print(factorize(PublicKey(1_000_000_000_100_000_000_002_379), progress_update=lambda p, max_p: print(f'{p}/{max_p}', end='\r')))
+    print(factorize(PublicKey(1_000_000_000_100_000_000_002_379)))

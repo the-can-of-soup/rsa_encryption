@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Give progress update when factorization finishes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Random private key generator changes">
       <change beforePath="$PROJECT_DIR$/rsa_encryption.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsa_encryption.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744308142567</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Use sympy.divisors() in factorize()">
+      <option name="closed" value="true" />
+      <created>1744326415399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744326415399</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Random private key generator changes">
+      <option name="closed" value="true" />
+      <created>1744326882244</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744326882244</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +114,9 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add basic encryption and decryption, add random key generator and factorizer" />
     <MESSAGE value="Give progress update when factorization finishes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Give progress update when factorization finishes" />
+    <MESSAGE value="Use sympy.divisors in factorize" />
+    <MESSAGE value="Use sympy.divisors() in factorize()" />
+    <MESSAGE value="Random private key generator changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Random private key generator changes" />
   </component>
 </project>
