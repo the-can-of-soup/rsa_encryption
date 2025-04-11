@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Generator
 import secrets
 import sympy
+import math
 
 def random_prime(bits: int = 1024) -> int:
     """
@@ -48,6 +49,7 @@ class PrivateKey:
         totient: int = (p - 1) * (q - 1)
 
         assert 1 < public_exponent < totient
+        assert math.gcd(public_exponent, totient) == 1
         assert sympy.isprime(p)
         assert sympy.isprime(q)
 
