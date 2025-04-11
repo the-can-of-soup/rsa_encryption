@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Remove unused stuff" />
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add check">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744329745343</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add check">
+      <option name="closed" value="true" />
+      <created>1744330008103</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744330008103</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +134,7 @@
     <MESSAGE value="Use sympy.divisors() in factorize()" />
     <MESSAGE value="Random private key generator changes" />
     <MESSAGE value="Remove unused stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove unused stuff" />
+    <MESSAGE value="Add check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add check" />
   </component>
 </project>

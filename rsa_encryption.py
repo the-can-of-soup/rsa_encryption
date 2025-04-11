@@ -101,16 +101,23 @@ def factorize(public_key: PublicKey) -> PrivateKey:
 
     raise ValueError('Something went horribly wrong and not a single valid private key was found.')
 
-def encrypt_int(plaintext: int, public_key: PublicKey):
+def encrypt_int(plaintext: int, key: PublicKey | PrivateKey):
     """
     Encrypts an integer.
     """
+    public_key: PublicKey = key
+    if isinstance(key, PrivateKey):
+        public_key = key.public_key
+
     return pow(plaintext, public_key.exponent, public_key.modulus)
 
 def decrypt_int(ciphertext: int, private_key: PrivateKey):
     """
     Decrypts an integer.
     """
+    if isinstance(private_key, PublicKey):
+        raise ValueError('Decryption requires a private key, not a public key!')
+
     return pow(ciphertext, private_key.exponent, private_key.public_key.modulus)
 
 if __name__ == '__main__':
