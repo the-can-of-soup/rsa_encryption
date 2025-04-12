@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add PurpleMind decryption">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add multiline input to PurpleMind decrypter" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +20,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/the-can-of-soup/rsa_encryption",
+    "accountId": "4b3e0349-4ccf-48cf-822c-3489d83866ea"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -258,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744486112971</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Add multiline input to PurpleMind decrypter">
+      <option name="closed" value="true" />
+      <created>1744486514471</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1744486514471</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,7 +285,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Add basic encryption and decryption, add random key generator and factorizer" />
     <MESSAGE value="Give progress update when factorization finishes" />
     <MESSAGE value="Use sympy.divisors in factorize" />
@@ -298,6 +309,7 @@
     <MESSAGE value="Add &quot;input&quot; folder to .gitignore" />
     <MESSAGE value="Add text and file decryption" />
     <MESSAGE value="Add PurpleMind decryption" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add PurpleMind decryption" />
+    <MESSAGE value="Add multiline input to PurpleMind decrypter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add multiline input to PurpleMind decrypter" />
   </component>
 </project>

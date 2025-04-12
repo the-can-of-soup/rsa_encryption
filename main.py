@@ -1,3 +1,5 @@
+# GitHub: https://github.com/the-can-of-soup/rsa_encryption
+
 import rsa_encryption as rsa
 import soup_tui as tui
 import soup_tui.keyboard as kb
