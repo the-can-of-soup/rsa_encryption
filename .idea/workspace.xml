@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Changes to test code">
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Make math.log10(2) a constant">
       <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -147,7 +147,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744415754941</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add decimal length attribute to CipherText">
+      <option name="closed" value="true" />
+      <created>1744428048324</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744428048324</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Make math.log10(2) a constant">
+      <option name="closed" value="true" />
+      <created>1744428091648</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744428091648</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,6 +189,8 @@
     <MESSAGE value="Add check for wrong key types" />
     <MESSAGE value="Add encryption/decryption into bytestrings" />
     <MESSAGE value="Changes to test code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes to test code" />
+    <MESSAGE value="Add decimal length attribute to CipherText" />
+    <MESSAGE value="Make math.log10(2) a constant" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make math.log10(2) a constant" />
   </component>
 </project>
