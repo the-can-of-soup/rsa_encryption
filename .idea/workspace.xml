@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add text and file decryption">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add PurpleMind decryption">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744485056839</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add PurpleMind decryption">
+      <option name="closed" value="true" />
+      <created>1744486112971</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1744486112971</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +297,7 @@
     <MESSAGE value="Add PurpleMind Encryption" />
     <MESSAGE value="Add &quot;input&quot; folder to .gitignore" />
     <MESSAGE value="Add text and file decryption" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add text and file decryption" />
+    <MESSAGE value="Add PurpleMind decryption" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PurpleMind decryption" />
   </component>
 </project>

@@ -447,8 +447,15 @@ if __name__ == '__main__':
                     tui.praw(f'\nDECRYPTED DATA\n\n{plaintext}\n\n')
 
                 elif sub_action == 'p':
-                    tui.praw('\nEnter encrypted data: ')
-                    ciphertext: str = tui.iraw()
+                    tui.praw('\nPress ENTER twice after entering the data.\n\nEnter encrypted data:\n')
+                    ciphertext: str = ''
+                    first_line: bool = True
+                    while True:
+                        line: str = tui.iraw(' > ' if first_line else '.. ')
+                        if line == '':
+                            break
+                        ciphertext += line[:-1] + '\n'
+                        first_line = False
 
                     tui.praw('\nDecrypting...\n')
                     start_time: float = time.time()
