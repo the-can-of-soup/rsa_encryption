@@ -21,6 +21,7 @@ PURPLEMIND_ENGLISH_WORDS: list[str] = [
 PURPLEMIND_PUBLIC_KEY_STR: str = f'\n\nPublic Key used on the website:\n0xd3c21bcf27e0b17a494b\n1000000000100000000002379\ne = 65537'
 # noinspection SpellCheckingInspection
 PURPLEMIND_PRIVATE_KEY_STR: str = f'\n\nPrivate Key used on the website:\n0xe8d4a51027,0xe8d4a5103d\n1000000000039,1000000000061\ne = 65537'
+DIGITS: list[str] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 def print_title() -> None:
     tui.clear_screen()
@@ -95,23 +96,28 @@ def purplemind_int_to_text(plaintext_int: int) -> str:
 
 # noinspection PyShadowingNames, SpellCheckingInspection
 def encrypt_purplemind(plaintext: str, key: rsa.PublicKey) -> str:
+    # Save first 30 characters because they are not encrypted
     first_30_chars: str = plaintext[:30]
     plaintext = plaintext[30:]
 
+    # Split remaining characters into 8 character chunks
     chunks: list[str] = []
     while len(plaintext) > 0:
         chunks.append(plaintext[:8])
         plaintext = plaintext[8:]
 
+    # Encrypt each chunk
     encrypted_chunks: list[rsa.CipherText] = []
     for chunk in chunks:
         chunk_int: int = purplemind_text_to_int(chunk)
         encrypted_chunks.append(rsa.encrypt_int(chunk_int, key))
 
+    # Concatenate chunks with a size of 24 digits per chunk
     ciphertext: str = ''
     for encrypted_chunk in encrypted_chunks:
         ciphertext += str(encrypted_chunk.data).zfill(24)
 
+    # Insert random words and add back first 30 characters
     ciphertext_with_words: str = first_30_chars
     i = 0
     while i < len(ciphertext):
@@ -120,6 +126,38 @@ def encrypt_purplemind(plaintext: str, key: rsa.PublicKey) -> str:
     ciphertext_with_words = ciphertext_with_words[:-1]
 
     return ciphertext_with_words
+
+# noinspection PyShadowingNames, SpellCheckingInspection
+def decrypt_purplemind(ciphertext: str, key: rsa.PrivateKey) -> str:
+    # Save first 30 characters because they are not encrypted
+    first_30_chars: str = ciphertext[:30]
+    ciphertext = ciphertext[30:]
+
+    # Remove random words
+    ciphertext_no_words: str = ''
+    for c in ciphertext:
+        if c in DIGITS:
+            ciphertext_no_words += c
+    ciphertext = ciphertext_no_words
+
+    # Split remaining characters into 24 character encrypted chunks
+    encrypted_chunks: list[int] = []
+    while len(ciphertext) > 0:
+        encrypted_chunks.append(int(ciphertext[:24]))
+        ciphertext = ciphertext[24:]
+
+    # Decrypt each chunk
+    chunks: list[str] = []
+    for encrypted_chunk in encrypted_chunks:
+        chunk_int: int = rsa.decrypt_int(rsa.CipherText(encrypted_chunk, 24), key)
+        chunks.append(purplemind_int_to_text(chunk_int))
+
+    # Join chunks and add back first 30 characters
+    plaintext: str = first_30_chars
+    for chunk in chunks:
+        plaintext += chunk
+
+    return plaintext
 
 if __name__ == '__main__':
     if not os.path.isdir('output'):
@@ -130,7 +168,7 @@ if __name__ == '__main__':
     while True:
         print_title()
         tui.praw('[E] Encrypt\n')
-        tui.praw('[D] Decrypt (WIP)\n')
+        tui.praw('[D] Decrypt\n')
         tui.praw('[F] Factorization Attack\n')
         tui.praw('[G] Generate Key\n')
         tui.praw('[K] Process Key\n')
@@ -397,6 +435,29 @@ if __name__ == '__main__':
                     end_time: float = time.time()
                     elapsed_time: float = end_time - start_time
                     tui.praw(f'Saved to "output/decrypted_data.{file_extension}" in {tui.format_time(elapsed_time, decimal_places=4)}!\n\n')
+
+                elif sub_action == 'i':
+                    tui.praw('\nDecrypting...\n')
+                    start_time: float = time.time()
+                    plaintext: int = rsa.decrypt_int(ciphertext, key)
+                    end_time: float = time.time()
+                    elapsed_time: float = end_time - start_time
+                    tui.praw(f'Decrypted in {tui.format_time(elapsed_time, decimal_places=4)}!\n')
+
+                    tui.praw(f'\nDECRYPTED DATA\n\n{plaintext}\n\n')
+
+                elif sub_action == 'p':
+                    tui.praw('\nEnter encrypted data: ')
+                    ciphertext: str = tui.iraw()
+
+                    tui.praw('\nDecrypting...\n')
+                    start_time: float = time.time()
+                    plaintext: str = decrypt_purplemind(ciphertext, key)
+                    end_time: float = time.time()
+                    elapsed_time: float = end_time - start_time
+                    tui.praw(f'Decrypted in {tui.format_time(elapsed_time, decimal_places=4)}!\n')
+
+                    tui.praw(f'\nDECRYPTED DATA\n\n{plaintext}\n\n')
 
                 tui.praw('Press any key to finish\n')
                 kb.read_key()
