@@ -4,6 +4,7 @@ import soup_tui.keyboard as kb
 import traceback
 import pickle
 import time
+import os
 
 # All "PurpleMind"-related things refer to this YouTube video: https://www.youtube.com/watch?v=EY6scAHNgZw
 # The online encrypter PurpleMind provides is here: https://www.purplemindcreations.com/rsa-encryption-helper
@@ -189,6 +190,8 @@ while True:
                     tui.praw('\nSaving...\n')
 
                     start_time: float = time.time()
+                    if not os.path.isdir('output'):
+                        os.mkdir('output')
                     with open('output/encrypted_data.dat', 'wb') as f:
                         f.write(pickle.dumps(ciphertext))
                     end_time: float = time.time()
