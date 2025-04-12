@@ -56,7 +56,7 @@ class PrivateKey:
         assert sympy.isprime(p)
         assert sympy.isprime(q)
 
-        self.exponent: int = sympy.mod_inverse(public_exponent, totient)
+        self.exponent: int = sympy.mod_inverse(public_exponent, self.totient)
         self.public_key: PublicKey = PublicKey(modulus, public_exponent)
 
     def __repr__(self) -> str:
