@@ -5,6 +5,8 @@ import secrets
 import sympy
 import math
 
+LOG10_2: float = math.log10(2)
+
 def random_prime(bits: int = 1024) -> int:
     """
     Generates a random prime number of the specified bit length. Cannot choose 2.
@@ -84,7 +86,7 @@ class CipherText:
         self.data: int = data
         self.bit_length: int = bit_length
         self.hex_length: int = math.ceil(self.bit_length / 4)
-        self.decimal_length: int = math.ceil(self.bit_length * math.log10(2))
+        self.decimal_length: int = math.ceil(self.bit_length * LOG10_2)
 
     def __repr__(self) -> str:
         return f'CipherText({self.data}, bit_length={self.bit_length})'
