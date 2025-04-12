@@ -49,10 +49,10 @@ class PrivateKey:
         self.q: int = q
 
         modulus: int = p * q
-        totient: int = (p - 1) * (q - 1)
+        self.totient: int = (p - 1) * (q - 1)
 
-        assert 1 < public_exponent < totient
-        assert math.gcd(public_exponent, totient) == 1
+        assert 1 < public_exponent < self.totient
+        assert math.gcd(public_exponent, self.totient) == 1
         assert sympy.isprime(p)
         assert sympy.isprime(q)
 
