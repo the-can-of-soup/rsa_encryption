@@ -84,6 +84,7 @@ class CipherText:
         self.data: int = data
         self.bit_length: int = bit_length
         self.hex_length: int = math.ceil(self.bit_length / 4)
+        self.decimal_length: int = math.ceil(self.bit_length * math.log10(2))
 
     def __repr__(self) -> str:
         return f'CipherText({self.data}, bit_length={self.bit_length})'

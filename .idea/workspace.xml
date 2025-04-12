@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add encryption/decryption into bytestrings" />
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Changes to test code">
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.main.executor": "Run",
     "Python.rsa_encryption.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -127,7 +131,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744415163488</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Changes to test code">
+      <option name="closed" value="true" />
+      <created>1744415389535</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744415389535</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changes to test code">
+      <option name="closed" value="true" />
+      <created>1744415754941</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744415754941</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +172,7 @@
     <MESSAGE value="Add check" />
     <MESSAGE value="Add check for wrong key types" />
     <MESSAGE value="Add encryption/decryption into bytestrings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add encryption/decryption into bytestrings" />
+    <MESSAGE value="Changes to test code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to test code" />
   </component>
 </project>
