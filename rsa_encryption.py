@@ -48,6 +48,10 @@ class PrivateKey:
         self.p: int = p
         self.q: int = q
 
+        self.p_bit_length: int = p.bit_length()
+        self.q_bit_length: int = q.bit_length()
+        self.bit_length: int = self.p_bit_length + self.q_bit_length
+
         modulus: int = p * q
         self.totient: int = (p - 1) * (q - 1)
 
