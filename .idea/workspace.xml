@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add link to GitHub">
+    <list default="true" id="075af00b-42c8-49f6-88d4-eb200a647f95" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/RSA Encryption.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RSA Encryption.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,262 +28,42 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/the-can-of-soup/rsa_encryption&quot;,
-    &quot;accountId&quot;: &quot;4b3e0349-4ccf-48cf-822c-3489d83866ea&quot;
+    &quot;accountId&quot;: &quot;18eca632-27aa-4036-b8f3-f1c2f9a78ffe&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2vWQpb1igI4dA97gamIT5dthleJ" />
+  <component name="ProjectId" id="2ve9QxgsWczKCFaR1IZdEEgEMO5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.rsa_encryption.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.spelling&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/campb/Documents/Python_PyCharm/RSA Encryption",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
+        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="" />
-      <created>1744258533886</created>
+      <changelist id="075af00b-42c8-49f6-88d4-eb200a647f95" name="Changes" comment="" />
+      <created>1744494661211</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1744258533886</updated>
+      <updated>1744494661211</updated>
     </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1744293506729</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1744293506729</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add basic encryption and decryption, add random key generator and factorizer">
-      <option name="closed" value="true" />
-      <created>1744307961006</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1744307961006</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Give progress update when factorization finishes">
-      <option name="closed" value="true" />
-      <created>1744308142567</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1744308142567</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Use sympy.divisors() in factorize()">
-      <option name="closed" value="true" />
-      <created>1744326415399</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1744326415399</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Random private key generator changes">
-      <option name="closed" value="true" />
-      <created>1744326882244</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1744326882244</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Remove unused stuff">
-      <option name="closed" value="true" />
-      <created>1744329745343</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1744329745343</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Add check">
-      <option name="closed" value="true" />
-      <created>1744330008103</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1744330008103</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Add check for wrong key types">
-      <option name="closed" value="true" />
-      <created>1744389234094</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1744389234094</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add encryption/decryption into bytestrings">
-      <option name="closed" value="true" />
-      <created>1744415163488</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1744415163488</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Changes to test code">
-      <option name="closed" value="true" />
-      <created>1744415389535</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1744415389535</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Changes to test code">
-      <option name="closed" value="true" />
-      <created>1744415754941</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1744415754941</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add decimal length attribute to CipherText">
-      <option name="closed" value="true" />
-      <created>1744428048324</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1744428048324</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Make math.log10(2) a constant">
-      <option name="closed" value="true" />
-      <created>1744428091648</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1744428091648</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Create main.py and add most features to TUI">
-      <option name="closed" value="true" />
-      <created>1744430811090</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1744430811090</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Create .gitignore">
-      <option name="closed" value="true" />
-      <created>1744430938666</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1744430938666</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Create &quot;output&quot; directory if it does not exist">
-      <option name="closed" value="true" />
-      <created>1744431005080</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1744431005080</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Save totient as attribute of PrivateKey">
-      <option name="closed" value="true" />
-      <created>1744475202848</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1744475202848</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Fix NameError">
-      <option name="closed" value="true" />
-      <created>1744475490629</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1744475490629</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Save bit length in PrivateKey">
-      <option name="closed" value="true" />
-      <created>1744475723333</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1744475723333</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Add integer encryption mode">
-      <option name="closed" value="true" />
-      <created>1744476568856</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1744476568856</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Allow private keys in public key inputs">
-      <option name="closed" value="true" />
-      <created>1744476781483</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1744476781483</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Add PurpleMind Encryption">
-      <option name="closed" value="true" />
-      <created>1744480373821</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1744480373821</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Add &quot;input&quot; folder to .gitignore">
-      <option name="closed" value="true" />
-      <created>1744484418516</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1744484418516</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Add text and file decryption">
-      <option name="closed" value="true" />
-      <created>1744485056839</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1744485056839</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Add PurpleMind decryption">
-      <option name="closed" value="true" />
-      <created>1744486112971</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1744486112971</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Add multiline input to PurpleMind decrypter">
-      <option name="closed" value="true" />
-      <created>1744486514471</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1744486514471</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Add link to GitHub">
-      <option name="closed" value="true" />
-      <created>1744486799217</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1744486799217</updated>
-    </task>
-    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,38 +71,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Give progress update when factorization finishes" />
-    <MESSAGE value="Use sympy.divisors in factorize" />
-    <MESSAGE value="Use sympy.divisors() in factorize()" />
-    <MESSAGE value="Random private key generator changes" />
-    <MESSAGE value="Remove unused stuff" />
-    <MESSAGE value="Add check" />
-    <MESSAGE value="Add check for wrong key types" />
-    <MESSAGE value="Add encryption/decryption into bytestrings" />
-    <MESSAGE value="Changes to test code" />
-    <MESSAGE value="Add decimal length attribute to CipherText" />
-    <MESSAGE value="Make math.log10(2) a constant" />
-    <MESSAGE value="Create main.py and add most features to TUI" />
-    <MESSAGE value="Create .gitignore" />
-    <MESSAGE value="Create &quot;output&quot; directory if it does not exist" />
-    <MESSAGE value="Save totient as attribute of PrivateKey" />
-    <MESSAGE value="Fix NameError" />
-    <MESSAGE value="Save bit length in PrivateKey" />
-    <MESSAGE value="Add integer encryption mode" />
-    <MESSAGE value="Allow private keys in public key inputs" />
-    <MESSAGE value="Add PurpleMind Encryption" />
-    <MESSAGE value="Add &quot;input&quot; folder to .gitignore" />
-    <MESSAGE value="Add text and file decryption" />
-    <MESSAGE value="Add PurpleMind decryption" />
-    <MESSAGE value="Add multiline input to PurpleMind decrypter" />
-    <MESSAGE value="Add link to GitHub" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add link to GitHub" />
   </component>
 </project>
