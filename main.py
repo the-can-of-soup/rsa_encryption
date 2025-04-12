@@ -16,6 +16,10 @@ PURPLEMIND_ENGLISH_WORDS: list[str] = [
     'kangaroo', 'lion', 'monkey', 'net', 'orange', 'peach', 'quilt', 'rose', 'sun', 'tree',
     'umbrella', 'vulture', 'whale', 'xenon', 'yellow', 'zebra'
 ]
+# noinspection SpellCheckingInspection
+PURPLEMIND_PUBLIC_KEY_STR: str = f'\n\nPublic Key used in the video:\n0xd3c21bcf27e0b17a494b\n1000000000100000000002379\ne = 65537'
+# noinspection SpellCheckingInspection
+PURPLEMIND_PRIVATE_KEY_STR: str = f'\n\nPrivate Key used in the video:\n0xe8d4a51027,0xe8d4a5103d\n1000000000039,1000000000061\ne = 65537'
 
 def print_title() -> None:
     tui.clear_screen()
@@ -50,13 +54,21 @@ def public_key_input() -> rsa.PublicKey:
     return rsa.PublicKey(modulus, public_exponent=exponent)
 
 # noinspection PyShadowingNames
-def print_private_key(key: rsa.PrivateKey) -> None:
-    tui.praw(f'\nPRIVATE KEY\n\nHexadecimal\n{hex(key.p)},{hex(key.q)}\n\nDecimal\n{key.p},{key.q}\n\nd = {key.exponent}\n\n')
-    tui.praw(f'PUBLIC KEY\n\nHexadecimal\n{hex(key.public_key.modulus)}\n\nDecimal\n{key.public_key.modulus}\n\ne = {key.public_key.exponent}\n\n')
+def print_private_key(key: rsa.PrivateKey, verbose: bool = False) -> None:
+    tui.praw(f'\nPRIVATE KEY\n\n')
+    if verbose:
+        tui.praw(f'Length: {key.p_bit_length} + {key.q_bit_length} = {key.bit_length} bits\n\n')
+    tui.praw(f'Hexadecimal\n{hex(key.p)},{hex(key.q)}\n\nDecimal\n{key.p},{key.q}\n\n')
+    if verbose:
+        tui.praw(f'd = {key.exponent}\nφ(n) = {key.totient}\n\n')
+    tui.praw(f'PUBLIC KEY\n\n')
+    if verbose:
+        tui.praw(f'Length: {key.public_key.bit_length} bits\n\n')
+    tui.praw(f'Hexadecimal\n{hex(key.public_key.modulus)}\n\nDecimal\n{key.public_key.modulus}\n\ne = {key.public_key.exponent}\n\n')
 
 while True:
     print_title()
-    tui.praw('[E] Encrypt (Only Text and File modes implemented)\n')
+    tui.praw('[E] Encrypt (PurpleMind mode not yet implemented)\n')
     tui.praw('[D] Decrypt (Not yet implemented)\n')
     tui.praw('[F] Factorization Attack\n')
     tui.praw('[G] Generate Key\n')
@@ -91,7 +103,7 @@ while True:
             print_title()
             tui.praw('PROCESS KEY\n\n')
             key: rsa.PrivateKey = private_key_input()
-            print_private_key(key)
+            print_private_key(key, verbose=True)
             tui.praw('Press any key to finish\n')
             kb.read_key()
 
@@ -120,7 +132,6 @@ while True:
             tui.praw('[P] PurpleMind\n\n')
             sub_action: str = kb.read_key()
 
-            plaintext: bytes | None = None
             ciphertext: rsa.CipherText | None = None
             key: rsa.PublicKey | None = None
 
@@ -140,7 +151,14 @@ while True:
                         plaintext += line
                         break
                     first_line = False
-                plaintext = plaintext.encode('utf-8')
+                plaintext: bytes = plaintext.encode('utf-8')
+
+                tui.praw('\nEncrypting...\n')
+                start_time: float = time.time()
+                ciphertext = rsa.encrypt_bytes(plaintext, key)
+                end_time: float = time.time()
+                elapsed_time: float = end_time - start_time
+                tui.praw(f'Encrypted in {tui.format_time(elapsed_time, decimal_places=4)}!\n')
 
             elif sub_action == 'f':
                 print_title()
@@ -157,21 +175,6 @@ while True:
                 elapsed_time: float = end_time - start_time
                 tui.praw(f'Loaded in {tui.format_time(elapsed_time, decimal_places=4)}!')
 
-            elif sub_action == 'i':
-                print_title()
-                tui.praw('ENCRYPT INTEGER\n\n')
-                key: rsa.PublicKey = public_key_input()
-
-            elif sub_action == 'p':
-                print_title()
-                # noinspection SpellCheckingInspection
-                tui.praw('PURPLEMIND ENCRYPTION\nReplicates behavior of this website: https://www.purplemindcreations.com/rsa-encryption-helper\nFor more information, see this video: https://www.youtube.com/watch?v=EY6scAHNgZw\n\n')
-                key: rsa.PublicKey = public_key_input()
-
-            else:
-                tui.praw('Invalid input!\n')
-
-            if plaintext is not None:
                 tui.praw('\nEncrypting...\n')
                 start_time: float = time.time()
                 ciphertext = rsa.encrypt_bytes(plaintext, key)
@@ -179,6 +182,30 @@ while True:
                 elapsed_time: float = end_time - start_time
                 tui.praw(f'Encrypted in {tui.format_time(elapsed_time, decimal_places=4)}!\n')
 
+            elif sub_action == 'i':
+                print_title()
+                tui.praw('ENCRYPT INTEGER\n\n')
+                key: rsa.PublicKey = public_key_input()
+                tui.praw('\nEnter integer: ')
+                plaintext: int = int(tui.iraw())
+
+                tui.praw('\nEncrypting...\n')
+                start_time: float = time.time()
+                ciphertext = rsa.encrypt_int(plaintext, key)
+                end_time: float = time.time()
+                elapsed_time: float = end_time - start_time
+                tui.praw(f'Encrypted in {tui.format_time(elapsed_time, decimal_places=4)}!\n')
+
+            elif sub_action == 'p':
+                print_title()
+                # noinspection SpellCheckingInspection
+                tui.praw(f'PURPLEMIND ENCRYPTION\nReplicates the behavior of this website: https://www.purplemindcreations.com/rsa-encryption-helper\nFor more information, see this video: https://www.youtube.com/watch?v=EY6scAHNgZw{PURPLEMIND_PUBLIC_KEY_STR}\n\n')
+                key: rsa.PublicKey = public_key_input()
+
+            else:
+                tui.praw('Invalid input!\n')
+
+            if ciphertext is not None:
                 tui.praw(f'\nENCRYPTED DATA\n\nLength: {ciphertext.bit_length} bits\n\n')
                 if ciphertext.bit_length <= 10000:
                     tui.praw(f'Hexadecimal\n0x{hex(ciphertext.data)[2:].zfill(ciphertext.hex_length)}\n\nDecimal\n{str(ciphertext.data).zfill(ciphertext.decimal_length)}\n\n')
