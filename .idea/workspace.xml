@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Allow private keys in public key inputs">
+    <list default="true" id="bcdda8ec-9d55-40c3-9627-142d3fbb48c1" name="Changes" comment="Add &quot;input&quot; folder to .gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -34,7 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.main.executor": "Debug",
+    "Python.main.executor": "Run",
     "Python.rsa_encryption.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -227,7 +227,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744476781483</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add PurpleMind Encryption">
+      <option name="closed" value="true" />
+      <created>1744480373821</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1744480373821</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add &quot;input&quot; folder to .gitignore">
+      <option name="closed" value="true" />
+      <created>1744484418516</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1744484418516</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,6 +279,8 @@
     <MESSAGE value="Save bit length in PrivateKey" />
     <MESSAGE value="Add integer encryption mode" />
     <MESSAGE value="Allow private keys in public key inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow private keys in public key inputs" />
+    <MESSAGE value="Add PurpleMind Encryption" />
+    <MESSAGE value="Add &quot;input&quot; folder to .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;input&quot; folder to .gitignore" />
   </component>
 </project>

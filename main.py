@@ -18,9 +18,9 @@ PURPLEMIND_ENGLISH_WORDS: list[str] = [
     'umbrella', 'vulture', 'whale', 'xenon', 'yellow', 'zebra'
 ]
 # noinspection SpellCheckingInspection
-PURPLEMIND_PUBLIC_KEY_STR: str = f'\n\nPublic Key used in the video:\n0xd3c21bcf27e0b17a494b\n1000000000100000000002379\ne = 65537'
+PURPLEMIND_PUBLIC_KEY_STR: str = f'\n\nPublic Key used on the website:\n0xd3c21bcf27e0b17a494b\n1000000000100000000002379\ne = 65537'
 # noinspection SpellCheckingInspection
-PURPLEMIND_PRIVATE_KEY_STR: str = f'\n\nPrivate Key used in the video:\n0xe8d4a51027,0xe8d4a5103d\n1000000000039,1000000000061\ne = 65537'
+PURPLEMIND_PRIVATE_KEY_STR: str = f'\n\nPrivate Key used on the website:\n0xe8d4a51027,0xe8d4a5103d\n1000000000039,1000000000061\ne = 65537'
 
 def print_title() -> None:
     tui.clear_screen()
@@ -122,10 +122,15 @@ def encrypt_purplemind(plaintext: str, key: rsa.PublicKey) -> str:
     return ciphertext_with_words
 
 if __name__ == '__main__':
+    if not os.path.isdir('output'):
+        os.mkdir('output')
+    if not os.path.isdir('input'):
+        os.mkdir('input')
+
     while True:
         print_title()
         tui.praw('[E] Encrypt\n')
-        tui.praw('[D] Decrypt (Not yet implemented)\n')
+        tui.praw('[D] Decrypt (WIP)\n')
         tui.praw('[F] Factorization Attack\n')
         tui.praw('[G] Generate Key\n')
         tui.praw('[K] Process Key\n')
@@ -189,7 +194,6 @@ if __name__ == '__main__':
                 sub_action: str = kb.read_key()
 
                 ciphertext: rsa.CipherText | None = None
-                key: rsa.PublicKey | None = None
 
                 if sub_action == 't':
                     print_title()
@@ -221,12 +225,14 @@ if __name__ == '__main__':
                     tui.praw('ENCRYPT FILE\n\n')
                     key: rsa.PublicKey = public_key_input()
 
-                    tui.praw('\nEnter file path: ')
-                    path: str = tui.iraw()
+                    tui.praw('\nEnter file path relative to "input" folder: ')
+                    path: str = os.path.join('input', tui.iraw())
                     tui.praw('\nLoading file...\n')
                     start_time: float = time.time()
                     with open(path, 'rb') as f:
                         plaintext: bytes = f.read()
+                    file_extension: str = path.rpartition('.')[2]
+                    plaintext: bytes = file_extension.encode('utf-8') + b'.' + plaintext
                     end_time: float = time.time()
                     elapsed_time: float = end_time - start_time
                     tui.praw(f'Loaded in {tui.format_time(elapsed_time, decimal_places=4)}!')
@@ -291,16 +297,109 @@ if __name__ == '__main__':
                         tui.praw('\nSaving...\n')
 
                         start_time: float = time.time()
-                        if not os.path.isdir('output'):
-                            os.mkdir('output')
                         with open('output/encrypted_data.dat', 'wb') as f:
                             f.write(pickle.dumps(ciphertext))
                         end_time: float = time.time()
                         elapsed_time: float = end_time - start_time
 
-                        tui.praw(f'Saved to "outputs/encrypted_data.dat" in {tui.format_time(elapsed_time, decimal_places=4)}!\n\n')
+                        tui.praw(f'Saved to "output/encrypted_data.dat" in {tui.format_time(elapsed_time, decimal_places=4)}!\n\n')
                         tui.praw('Press any key to finish\n')
                         kb.read_key()
+
+            elif action == 'd':
+                print_title()
+                tui.praw('DECRYPT\n\n')
+                tui.praw('[T] Text\n')
+                tui.praw('[F] File\n')
+                tui.praw('[I] Integer\n')
+                tui.praw('[P] PurpleMind\n\n')
+                sub_action: str = kb.read_key()
+
+                ciphertext: rsa.CipherText | None = None
+                key: rsa.PrivateKey | None = None
+
+                if sub_action == 't':
+                    print_title()
+                    tui.praw('DECRYPT TEXT\n\n')
+                    key: rsa.PrivateKey = private_key_input()
+
+                elif sub_action == 'f':
+                    print_title()
+                    tui.praw('DECRYPT FILE\n\n')
+                    key: rsa.PrivateKey = private_key_input()
+
+                elif sub_action == 'i':
+                    print_title()
+                    tui.praw('DECRYPT INTEGER\n\n')
+                    key: rsa.PrivateKey = private_key_input()
+
+                elif sub_action == 'p':
+                    print_title()
+                    # noinspection SpellCheckingInspection
+                    tui.praw(f'PURPLEMIND DECRYPTION\nReverses the behavior of this website: https://www.purplemindcreations.com/rsa-encryption-helper\nFor more information, see this video: https://www.youtube.com/watch?v=EY6scAHNgZw{PURPLEMIND_PRIVATE_KEY_STR}\n\n')
+                    key: rsa.PrivateKey = private_key_input()
+
+                else:
+                    tui.praw('Invalid input!\n')
+
+                if sub_action in ('t', 'f', 'i'):
+                    tui.praw('\n[F] Decrypt from file\nPress any other key to decrypt from text\n')
+                    if kb.read_key() == 'f':
+                        tui.praw('\nEnter file path relative to "input" folder: ')
+                        path: str = os.path.join('input', tui.iraw())
+                        tui.praw('Loading file...\n')
+
+                        start_time: float = time.time()
+                        with open(path, 'rb') as f:
+                            ciphertext: rsa.CipherText = pickle.loads(f.read())
+                        end_time: float = time.time()
+                        elapsed_time: float = end_time - start_time
+
+                        tui.praw(f'Loaded in {tui.format_time(elapsed_time, decimal_places=4)}!\n')
+                    else:
+                        tui.praw('\nIf using hexadecimal, add "0x" to the beginning of the data.\n\nEnter encrypted data: ')
+                        data_str: str = tui.iraw()
+                        data: int = int(data_str, 16 if data_str.startswith('0x') else 10)
+                        tui.praw('Enter data length in bits, or leave blank to guess: ')
+                        length_str: str = tui.iraw()
+                        length: int
+                        if length_str == '':
+                            length = data.bit_length()
+                        else:
+                            length = int(length_str)
+
+                if sub_action == 't':
+                    tui.praw('\nDecrypting...\n')
+                    start_time: float = time.time()
+                    plaintext: bytes = rsa.decrypt_bytes(ciphertext, key)
+                    plaintext: str = plaintext.decode('utf-8')
+                    end_time: float = time.time()
+                    elapsed_time: float = end_time - start_time
+                    tui.praw(f'Decrypted in {tui.format_time(elapsed_time, decimal_places=4)}!\n')
+
+                    tui.praw(f'\nDECRYPTED DATA\n\n{plaintext}\n\n')
+
+                elif sub_action == 'f':
+                    tui.praw('\nDecrypting...\n')
+                    start_time: float = time.time()
+                    plaintext: bytes = rsa.decrypt_bytes(ciphertext, key)
+                    partitioned: tuple[bytes, bytes, bytes] = plaintext.partition(b'.')
+                    file_extension: str = partitioned[0].decode('utf-8')
+                    plaintext: bytes = partitioned[2]
+                    end_time: float = time.time()
+                    elapsed_time: float = end_time - start_time
+                    tui.praw(f'Decrypted in {tui.format_time(elapsed_time, decimal_places=4)}!\n')
+
+                    tui.praw(f'Saving...\n')
+                    start_time: float = time.time()
+                    with open(f'output/decrypted_data.{file_extension}', 'wb') as f:
+                        f.write(plaintext)
+                    end_time: float = time.time()
+                    elapsed_time: float = end_time - start_time
+                    tui.praw(f'Saved to "output/decrypted_data.{file_extension}" in {tui.format_time(elapsed_time, decimal_places=4)}!\n\n')
+
+                tui.praw('Press any key to finish\n')
+                kb.read_key()
 
         except Exception as e:
             tui.praw(f'{tui.ANSI.BRIGHT_RED}\n{'-' * 20}\nERROR: {e}\n\n{traceback.format_exc()}{'-' * 20}\n\nPress any key to finish\n')
