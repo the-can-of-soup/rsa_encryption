@@ -48,13 +48,17 @@ def private_key_input() -> rsa.PrivateKey:
     return private_key_from_text(factors, public_exponent=exponent)
 
 # noinspection PyShadowingNames
-def public_key_input() -> rsa.PublicKey:
-    tui.praw('If using hexadecimal, add "0x" to the beginning of the key.\nPrivate keys are also accepted.\n\nEnter public/private key: ')
+def public_key_input(accept_private_keys: bool = True) -> rsa.PublicKey:
+    tui.praw('If using hexadecimal, add "0x" to the beginning of the key.')
+    if accept_private_keys:
+        tui.praw('\nPrivate keys are also accepted.\n\nEnter public/private key: ')
+    else:
+        tui.praw('\n\nEnter public key: ')
     modulus: str = tui.iraw()
     tui.praw('Enter public exponent: ')
     exponent: int = int(tui.iraw())
 
-    if ',' in modulus: # User gave a private key
+    if ',' in modulus and accept_private_keys: # User gave a private key
         private_key: rsa.PrivateKey = private_key_from_text(modulus, public_exponent=exponent)
         return private_key.public_key
 
@@ -211,7 +215,7 @@ if __name__ == '__main__':
             elif action == 'f':
                 print_title()
                 tui.praw('FACTORIZATION ATTACK\n\n')
-                public_key: rsa.PublicKey = public_key_input()
+                public_key: rsa.PublicKey = public_key_input(accept_private_keys=False)
                 tui.praw('\nFactorizing...\n')
 
                 start_time: float = time.time()
